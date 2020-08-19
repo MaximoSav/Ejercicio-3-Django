@@ -22,6 +22,12 @@ class Persona(models.Model):
     numLibros = models.IntegerField()
     adeoudo = models.FloatField()
 
+    def llevarMaterial (self):
+        pass
+
+    def dejarMaterial (self):
+        pass
+
     def __str__(self):
         return ("{}:{}".format(self.nombre, self.apellido, self.telefono, self.correo))
 
@@ -34,6 +40,15 @@ class Material (models.Model):
     anio = models.IntegerField()
     status = models.CharField(max_length = 40)
 
+    def altaMaterial (self):
+        pass
+
+    def bajaMaterial (self):
+        pass
+
+    def cambioMaterial (self):
+        pass
+
     def __str__(self):
         return ("{}:{}".format(self.autor, self.titulo, self.anio, self.status))
 
@@ -44,6 +59,8 @@ class Prestamo (models.Model):
     fechaSalida = models.CharField(max_length = 40)
     fechaRegreso = models.CharField(max_length = 40)
 
+    def cuota (self):
+        pass
 
     def __str__(self):
         return ("{}:{}".format(self.codigo, self.id, self.fechaSalida, self.fechaRegreso))
@@ -61,8 +78,8 @@ class Revista (Material):
 class Alumno (Persona):
     matricula = models.IntegerField()
 
-    def __str__(self):
-        return ("{}:{}".format(self.nombre, self.apellido, self.telefono, self.correo))
+    #def __str__(self):
+       # return ("{}:{}".format(self.nombre, self.apellido, self.telefono, self.correo, self.tipoPersona, self.numLibros, self.adeoudo, self.matricula))
 
 class Profesor (Persona):
     numEmpleado = models.IntegerField()
