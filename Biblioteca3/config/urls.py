@@ -18,7 +18,9 @@ from django.contrib import admin
 from django.urls import path
 from django.urls import include
 
+
 urlpatterns = [
+    path('', include('biblioteca3.urls')),
     path(r'^jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
 ]

@@ -67,9 +67,7 @@ class Prestamo (models.Model):
 
 class Libro (Material):
     editorial = models.CharField(max_length = 40)
-
-    def __str__(self):
-        return ("{}:{}".format(self.editorial))
+    fotoPortada = models.ImageField(max_length=100, upload_to='fotos_tapa/', default='fotos_tapa/default.png', blank=True)
 
 class Revista (Material):
     def asd1(self):

@@ -18,15 +18,27 @@ class AlumnoSup(admin.ModelAdmin):
 class MaterialSup(admin.ModelAdmin):
     list_display = ['autor', 'titulo', 'anio', 'tipoMaterial']
 
-class PersonaSup (admin.ModelAdmin):
-    list_display = ['',]
 
+class PersonaSup (admin.ModelAdmin):
+    list_display = ['nombre','apellido','correo','telefono']
+
+class PrestamoSup(admin.ModelAdmin):
+    list_display = ['persona','codigo','fechaSalida','fechaRegreso']
+
+class ProfesorSup(admin.ModelAdmin):
+    list_display = ['nombre','apellido','correo','telefono','numEmpleado']
+
+class LibroSup(admin.ModelAdmin):
+    list_display = ['Biblioteca','autor','titulo','anio','status','fotoPortada']
+
+class RevistaSup(admin.ModelAdmin):
+    list_display = ['Biblioteca','autor','titulo','anio','status']
 
 admin.site.register(Biblioteca, BibliotecaAdmin)
 admin.site.register(Material, MaterialSup)
-admin.site.register(Persona, )
-admin.site.register(Prestamo, )
+admin.site.register(Persona, PersonaSup)
+admin.site.register(Prestamo, PrestamoSup)
 admin.site.register(Alumno, AlumnoSup)
-admin.site.register(Profesor, )
-admin.site.register(Libro, )
-admin.site.register(Revista, )
+admin.site.register(Profesor, ProfesorSup)
+admin.site.register(Libro, LibroSup)
+admin.site.register(Revista, RevistaSup)
